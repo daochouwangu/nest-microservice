@@ -8,6 +8,6 @@ export class PaymentsController {
   @Post()
   createUser(@Body() createPaymentDto: CreatePaymentDto) {
     // return this.natsClient.send({ cmd: 'create_payments' }, createPaymentsDto);
-    this.natsClient.emit('createPayment', createPaymentDto);
+    return this.natsClient.emit('createPayment', createPaymentDto);
   }
 }
